@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<title>Replacer demo</title>
+	    <style>
+	        .green {
+	            background: #66ff8d;
+	        }
+	        .red {
+	            background: #ff3a3c;
+	        }
+
+	        .blue {
+	            background: #42a4ff;
+	        }
+	    </style>
+	</head>
+	<body>
+		<div>
+			<p>Some text</p>
+		    <div id="desktop" class="red">
+		        <h1>Test</h1>
+		    </div>
+			<p>Some text#2</p>
+    		<div id="mobile" class="blue"></div>
+			<p>Some text#3</p>
+    		<div id="super-mobile" class="green"></div>
+		</div>
+
+
+		
+		<script src="https://code.jquery.com/jquery-3.1.1.min.js" 
+				integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   
+				crossorigin="anonymous">
+		</script>
+		<script src="replacer.js"></script>
+		<script>
+			jQuery(function () {
+			    jQuery('#desktop').replacer([
+			        [jQuery('#mobile'), '(max-width: 700px)'],
+			        [jQuery('#super-mobile'), '(max-width: 500px)'],
+			    ]);
+			});
+		</script>
+	</body>
+</html>
